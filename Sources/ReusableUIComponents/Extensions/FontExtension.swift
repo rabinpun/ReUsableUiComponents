@@ -20,13 +20,18 @@ public protocol Fonts {
     
 }
 
+public protocol FontSizes {
+    
+    var size: CGFloat { get }
+}
+
 public extension UIFont {
     
-    static func font(_ font: Fonts, weight: Weight, size: CGFloat) -> UIFont {
+    static func font(_ font: Fonts, weight: Weight, size: FontSizes) -> UIFont {
         let fontName = weight.name(with: font)
-        guard let font = UIFont(name: fontName, size: size) else {
+        guard let font = UIFont(name: fontName, size: size.size) else {
             assertionFailure("The font named \(fontName) is not valid. Please check it is correct")
-            return .systemFont(ofSize: size)
+            return .systemFont(ofSize: size.size)
         }
         return font
     }

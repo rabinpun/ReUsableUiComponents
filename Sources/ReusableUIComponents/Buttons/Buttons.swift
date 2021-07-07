@@ -31,7 +31,7 @@ open class Button: UIButton {
 
 open class RoundedTextButton: Button {
     
-    public convenience init(font: Fonts, weight: UIFont.Weight, size: CGFloat, textColor: UIColor, title: String, isLargeScreen: Bool, backGroundColor: UIColor, cornerRadius: CGFloat = 20) {
+    public convenience init(font: Fonts, weight: UIFont.Weight, size: FontSizes, textColor: UIColor, title: String, isLargeScreen: Bool, backGroundColor: UIColor, cornerRadius: CGFloat = 20) {
         self.init()
         setAttributedTitle(title.getFontAttributedString(font: font, weight: weight, size: size, color: textColor), for: .normal)
         self.backgroundColor = backGroundColor
@@ -43,7 +43,7 @@ open class RoundedTextButton: Button {
 
 open class UnderLinedTextButton: Button {
     
-    public convenience init(font: Fonts, weight: UIFont.Weight, size: CGFloat, textColor: UIColor, title: String) {
+    public convenience init(font: Fonts, weight: UIFont.Weight, size: FontSizes, textColor: UIColor, title: String) {
         self.init()
         setAttributedTitle(title.getFontAttributedString(font: font, weight: weight, size: size, color: textColor, underlined: true), for: .normal)
         translatesAutoresizingMaskIntoConstraints = false

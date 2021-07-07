@@ -9,7 +9,7 @@ import UIKit
 
 public extension String {
     
-    func getFontAttributedString(font: Fonts, weight: UIFont.Weight, size: CGFloat, color: UIColor, underlined: Bool = false) -> NSAttributedString {
+    func getFontAttributedString(font: Fonts, weight: UIFont.Weight, size: FontSizes, color: UIColor, underlined: Bool = false) -> NSAttributedString {
         
     var myAttributes:Dictionary = [
         NSAttributedString.Key.font : UIFont.font(font, weight: weight, size: size),
@@ -23,3 +23,4 @@ public extension String {
     return NSAttributedString(string: self, attributes: myAttributes)
     }
 }
+
